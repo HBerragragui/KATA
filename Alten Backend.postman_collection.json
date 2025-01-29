@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "e2a233fd-9efb-4b11-abc2-f0558f5b5f85",
+		"name": "Alten Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31722866"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "GetProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \n        \"code\": \"P003\",\n        \"name\": \"Product 2 name\",\n        \"description\": \"product desc1\",\n        \"image\": \"img\",\n        \"category\": \"category2\",\n        \"price\": 23.0,\n        \"quantity\": 10,\n        \"internalReference\": \"REF123\",\n        \"shellId\": 2,\n        \"inventoryStatus\": \"INSTOCK\",\n        \"rating\": 4\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"code\": \"P002\",\n        \"name\": \"Product 2 name\",\n        \"description\": \"product desc1\",\n        \"image\": \"im\",\n        \"category\": \"category2\",\n        \"price\": 24.0,\n        \"quantity\": 10,\n        \"internalReference\": \"REF12\",\n        \"shellId\": 2,\n        \"inventoryStatus\": \"INSTOCK\",\n        \"rating\": 4\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"hassanbrg\",\n    \"email\" : \"hassan.berragragui@outlook.fr\",\n    \"password\" : \"hassanbrg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"hassan.berragragui1@outlook.fr\",\n    \"password\" : \"hassanbrg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "get carts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"code\": \"P001\",\n    \"name\": \"Product Name\",\n    \"description\": \"Product description goes here\",\n    \"image\": \"image_path.jpg\",\n    \"category\": \"Category1\",\n    \"price\": 29.99,\n    \"quantity\": 100,\n    \"internalReference\": \"REF1234\",\n    \"shellId\": 1,\n    \"inventoryStatus\": \"INSTOCK\",\n    \"rating\": 5,\n    \"createdAt\": \"2025-01-25T18:10:56.733467Z\",\n    \"updatedAt\": \"2025-01-25T18:10:56.733467Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product from cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWFtYUBvdXRsb29rLmZyIiwiaWF0IjoxNzM4MTE0Nzc3LCJleHAiOjE3MzgxMTgzNzd9.TWBoHraMF9BJlBSYcYymsWf9XnsSX4B2bqx4y8b7jfs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"code\": \"P001\",\n    \"name\": \"Product Name\",\n    \"description\": \"Product description goes here\",\n    \"image\": \"image_path.jpg\",\n    \"category\": \"Category1\",\n    \"price\": 29.99,\n    \"quantity\": 100,\n    \"internalReference\": \"REF1234\",\n    \"shellId\": 1,\n    \"inventoryStatus\": \"INSTOCK\",\n    \"rating\": 5,\n    \"createdAt\": \"2025-01-25T18:10:56.733467Z\",\n    \"updatedAt\": \"2025-01-25T18:10:56.733467Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wishlists",
+			"item": [
+				{
+					"name": "get wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWFtYUBvdXRsb29rLmZyIiwiaWF0IjoxNzM4MTE5ODIyLCJleHAiOjE3MzgxMjM0MjJ9.XqowTDV7zx4balxPBg0aTXSnPmNMgQaQ7lu4UWy7A-8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/wishlists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"wishlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product to wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWFtYUBvdXRsb29rLmZyIiwiaWF0IjoxNzM4MTE5ODIyLCJleHAiOjE3MzgxMjM0MjJ9.XqowTDV7zx4balxPBg0aTXSnPmNMgQaQ7lu4UWy7A-8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"code\": \"P001\",\n    \"name\": \"Product Name\",\n    \"description\": \"Product description goes here\",\n    \"image\": \"image_path.jpg\",\n    \"category\": \"Category1\",\n    \"price\": 29.99,\n    \"quantity\": 100,\n    \"internalReference\": \"REF1234\",\n    \"shellId\": 1,\n    \"inventoryStatus\": \"INSTOCK\",\n    \"rating\": 5,\n    \"createdAt\": \"2025-01-25T18:10:56.733467Z\",\n    \"updatedAt\": \"2025-01-25T18:10:56.733467Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/wishlists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"wishlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product from wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWFtYUBvdXRsb29rLmZyIiwiaWF0IjoxNzM4MTE5ODIyLCJleHAiOjE3MzgxMjM0MjJ9.XqowTDV7zx4balxPBg0aTXSnPmNMgQaQ7lu4UWy7A-8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"code\": \"P001\",\n    \"name\": \"Product Name\",\n    \"description\": \"Product description goes here\",\n    \"image\": \"image_path.jpg\",\n    \"category\": \"Category1\",\n    \"price\": 29.99,\n    \"quantity\": 100,\n    \"internalReference\": \"REF1234\",\n    \"shellId\": 1,\n    \"inventoryStatus\": \"INSTOCK\",\n    \"rating\": 5,\n    \"createdAt\": \"2025-01-25T18:10:56.733467Z\",\n    \"updatedAt\": \"2025-01-25T18:10:56.733467Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/wishlists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"wishlists"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
